@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;900&display=swap");
+
+:root {
+  --light-blue: #59adff;
+  --dark-blue: #4082fa;
+  --white: #fff;
+  --green: #42b72a;
+  --black: #000;
+  --grey: #353535;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+h3 {
+  text-align: center;
+  color: var(--black);
+  margin: 8px 0;
+  font-weight: 400;
+}
+
+.box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+}
+
+.box a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.box a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--dark-blue);
+}
+
+.box p {
+  text-align: center;
+  color: var(--black);
+  font-weight: 900;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 100vh; */
+  width: 30vw;
+  margin: auto;
+  gap: 2vh;
+}
+
+.post-title {
+  color: var(--black);
+  text-align: center;
+  font-weight: 600;
+}
+
+.posts p {
+  color: #eaeaea;
+  color: var(--black);
+  padding-left: 6px;
+  margin-bottom: 4px;
+}
+
+.post {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.follow {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+.follow input[type="submit"] {
+  border: 2px solid var(--dark-blue);
+  color: var(--white);
+  background-color: var(--dark-blue);
+  padding: 8px;
+  font-size: 18px;
+}
+
+.follow input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.edit-profile {
+  text-decoration: none;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-size: 18px;
+  text-align: center;
+  padding: 8px;
+  border: 2px solid var(--dark-blue);
+}

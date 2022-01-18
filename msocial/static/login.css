@@ -1,0 +1,89 @@
+*:before,
+*,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --light-blue: #59adff;
+  --dark-blue: #4082fa;
+  --white: #fff;
+  --green: #42b72a;
+  --black: #000;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+}
+
+.intro h1 {
+  font-size: 3em;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+.main-msg {
+  font-size: 2em;
+  margin: 0;
+  color: var(--black);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  height: 40%;
+  width: 400px;
+}
+
+input {
+  margin: 10px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid var(--white);
+  border-radius: 8px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+input[type="password"] {
+  padding: 10px;
+  border: 2px solid var(--white);
+  border-radius: 8px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+input[type="submit"] {
+  border-radius: 8px;
+  width: 100%;
+  background-color: var(--dark-blue);
+  height: 30%;
+  color: var(--white);
+  font-size: 20px;
+}
+
+#reset-password {
+  text-decoration: none;
+  margin: 3px 0 30px 0;
+  color: var(--light-blue);
+  font-size: 15px;
+}
+
+#new-account {
+  background-color: var(--green);
+  text-decoration: none;
+  color: var(--white);
+  padding: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 5px;
+}

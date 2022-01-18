@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="sub-container">
+        <div class="intro-text">
+          <p class="header">Sign Up</p>
+          <p class="sub-header">A whole world awaits you.</p>
+        </div>
+        <form method="post" class="form-container">
+          <div class="name">
+            <input
+              type="text"
+              name="fname"
+              id=""
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="lname"
+              id=""
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            id=""
+            required
+          />
+          <input type="text" name="email" placeholder="Email" id="" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            id=""
+            required
+          />
+          <input class="fcolor-white" type="submit" value="Create Account" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

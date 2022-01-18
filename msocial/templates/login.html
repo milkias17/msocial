@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Log In</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='login.css') }}"
+    />
+  </head>
+  <body>
+    {% if get_flashed_messages() %}
+      {% for message in get_flashed_messages() %}
+        <p class="flash-error">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+    <div class="main-container">
+      <div class="intro">
+        <h1>Msocial</h1>
+        <p class="main-msg">Connect with friends <br />on Msocial.</p>
+      </div>
+      <form method="post" action="{{ url_for('auth.login') }}" class="login-form">
+        <input name="username" type="text" placeholder="Username" /><br />
+        <input name="password" type="password" placeholder="Password" /><br />
+        <input type="submit" value="Log In" />
+        <a id="reset-password" href="">Forgot Password?</a>
+        <a id="new-account" href="{{ url_for('auth.register') }}">Create New Account</a>
+      </form>
+    </div>
+  </body>
+</html>
+
+</body>
+
+</html>

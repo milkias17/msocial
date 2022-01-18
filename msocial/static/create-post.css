@@ -1,0 +1,37 @@
+.title {
+  color: #eaeaea;
+  color: #08d9d6;
+  text-align: center;
+}
+
+.create-post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.create-post textarea,
+input[type="submit"] {
+  margin-top: 10px;
+  color: #eeeeee;
+  border: 1px solid #08d9d6;
+}
+
+.create-post textarea {
+  width: 40%;
+  height: 40%;
+  padding: 4px;
+  outline: none;
+}
+
+.create-post input[type="submit"] {
+  padding: 2px;
+  margin: 8px 0 0 0;
+  width: 8%;
+  background-color: #00adb5;
+  color: #eeeeee;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}

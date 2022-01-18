@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='create-post.css') }}"/>
+{% endblock %}
+
+{% block content %}
+  {% if get_flashed_messages() %}
+    {% for message in get_flashed_messages() %}
+      <p class="error">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+
+  <h1 class="title"> Create Post </h1>
+  <form method="post" class="create-post">
+    <textarea name="body" placeholder="What are the thoughts you'd like to share?" required autofocus></textarea>
+    <input type="submit" value="Post">
+  </form>
+{% endblock %}

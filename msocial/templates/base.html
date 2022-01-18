@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" />
+    <title>Msocial</title>
+    {% block head %} {% endblock %}
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-bar">
+        <div class="left-nav">
+          <a id='app-name' href="{{ url_for('index') }}">MSocial</a>
+          <div class="home">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+          </div>
+          <div class="explore">
+            <li><a href="{{ url_for('explore') }}">Explore</a></li>
+          </div>
+        </div>
+        <div class="right-nav">
+          {% if g.user %}
+            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('user_bp.profile', username=g.user.username) }}">Profile Page</a></li>
+          {% else %}
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+          {% endif %}
+        </div>
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

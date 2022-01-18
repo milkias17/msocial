@@ -1,0 +1,4 @@
+/env/
+/.flaskenv
+/msocial/__pycache__/*
+/msocial/__pycache__/

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='edit_profile.css') }}">
+{% endblock %}
+
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data" action="{{ url_for('user_bp.edit_profile') }}">
+    {% if get_flashed_messages() %}
+      {% for error in get_flashed_messages() %}
+        <p class="error">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+    <div class="main-container">
+      <form action="{{ url_for('user_bp.edit_profile') }}" method="post">
+        <div class="welcome">
+          <img src="{{ url_for('static', filename=g.user.profile_pic) }}" alt="">
+          <h2>Hi {{ g.user.username }}</h2>
+        </div>
+        <div class="profile-pic">
+          <label for="profile_pic">Edit Profile Picture</label>
+          <input type="file" name="profile_pic" id="profile_pic" accept="image/jpg, image/png, image/jpeg" required>
+        </div>
+        <div class="fname">
+          <label for="fname">First Name</label>
+          <input type="text" name="fname" id="fname" value={{ g.user.f_name }} required>
+        </div>
+        <div class="lname">
+          <label for="lname">Last Name</label>
+          <input type="text" name="lname" id="lname" value={{ g.user.l_name }} required>
+        </div>
+        <div class="username">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" value={{ g.user.username }} required>
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" value={{g.user.email}} required>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </form>
+{% endblock %}
+
