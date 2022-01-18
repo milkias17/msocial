@@ -8,7 +8,7 @@ To learn how to handle the backend of a website and learning things like user au
 
 ## You could have improved ...
 
-This was not a project to be used by anyone so there are a lot of things that can be optimized and some features that should have been implemented.
+This was not a project meant to be used by anyone so there are a lot of things that can be optimized and some features that should have been implemented.
 But this was just a project to learn on so I didn't spend more time than I needed to and just implemented the features in the simplest way.
 
 ## How do I try it out
