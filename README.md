@@ -16,13 +16,13 @@ But this was just a project to learn on so I didn't spend more time than I neede
 There is a sample database with a few users! But make sure you have python and pip installed and in your PATH.
 
 1. Go to the project root.
-
-2. `pip install -r requirements.txt`
-
+2. ```bash
+   pip install -r requirements.txt
+   ```
 3. ```bash
    export FLASK_ENV=development
    export FLASK_APP=msocial
-   export SECRET_KEY=whatever
    ```
-
-4. `flask run`
+4. ```bash
+   flask run
+   ```
