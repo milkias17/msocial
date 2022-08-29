@@ -37,60 +37,44 @@ def get_user(username):
 
 def get_num_following(user):
     db = get_db()
-    return db.execute(
-        """
-            SELECT
-            IIF(
-                EXISTS(
+    tmp = db.execute(
+        "SELECT * FROM followers WHERE follower_id = ?", (user["id"],)
+    ).fetchone()
+    if tmp is not None:
+        return db.execute(
+            """
                     SELECT
-                    *
+                    COUNT(followed_id) AS following
                     FROM
                     followers
                     WHERE
                     follower_id = ?
-                    ),
-                (
-                    SELECT
-                    COUNT(followed_id)
-                    FROM
-                    followers
-                    WHERE
-                    follower_id = ?
-                    ),
-                0
-                ) following;
-            """,
-        (user["id"], user["id"]),
-    ).fetchone()["following"]
+                """,
+            (user["id"],),
+        ).fetchone()["following"]
+
+    return 0
 
 
 def get_num_followers(user):
     db = get_db()
-    return db.execute(
-        """
-        SELECT
-        IIF(
-            EXISTS(
+    tmp = db.execute(
+        "SELECT * FROM followers WHERE followed_id = ?", (user["id"],)
+    ).fetchone()
+    if tmp is not None:
+        return db.execute(
+            """
                 SELECT
-                *
+                COUNT(follower_id) AS followers
                 FROM
                 followers
                 WHERE
                 followed_id = ?
-                ),
-            (
-                SELECT
-                COUNT(follower_id)
-                FROM
-                followers
-                WHERE
-                followed_id = ?
-                ),
-            0
-            ) followers;
-        """,
-        (user["id"], user["id"]),
-    ).fetchone()["followers"]
+                """,
+            (user["id"],),
+        ).fetchone()["followers"]
+
+    return 0
 
 
 def get_posts(user):
@@ -115,31 +99,19 @@ def get_posts(user):
 
 def get_num_posts(user):
     db = get_db()
-    return db.execute(
-        """
-        SELECT
-        IIF(
-            EXISTS(
+    tmp = db.execute("SELECT * FROM posts WHERE author_id = ?", (user["id"],))
+    if tmp is not None:
+        return db.execute(
+            """
                 SELECT
-                *
+                COUNT(body) AS num_posts
                 FROM
-                posts
-                WHERE
-                author_id = ?
-                ),
-            (
-                SELECT
-                COUNT(body)
-                FROM
-                posts
-                WHERE
-                author_id = ?
-                ),
-            0
-            ) num_posts;
-            """,
-        (user["id"], user["id"]),
-    ).fetchone()["num_posts"]
+                posts WHERE author_id = ?
+                """,
+            (user["id"],),
+        ).fetchone()["num_posts"]
+
+    return 0
 
 
 def get_followers(user):

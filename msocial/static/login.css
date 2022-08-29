@@ -36,10 +36,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
   border-radius: 8px;
-  height: 40%;
-  width: 25%;
+  min-width: 400px;
+  width: 600px;
+  max-width: 50%;
 }
 
 input {
@@ -66,9 +66,13 @@ input[type="submit"] {
   border-radius: 8px;
   width: 100%;
   background-color: var(--dark-blue);
-  height: 30%;
+  padding: 1em;
   color: var(--white);
   font-size: 20px;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 #reset-password {
@@ -82,7 +86,7 @@ input[type="submit"] {
   background-color: var(--green);
   text-decoration: none;
   color: var(--white);
-  padding: 10px;
+  padding: 1em;
   font-weight: 500;
   font-size: 20px;
   border-radius: 5px;
